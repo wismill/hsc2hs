@@ -6,8 +6,10 @@ The standard mode for hsc2hs: generates a C file which is
 compiled and run; the output of that program is the .hs file.
 -}
 
+import Prelude hiding (Foldable(..))
+
 import Data.Char                ( isAlphaNum, toUpper )
-import Data.Foldable            ( foldl' )
+import Data.Foldable            ( Foldable(..) )
 import Control.Monad            ( when, forM_ )
 
 import System.Exit              ( ExitCode(..), exitWith )

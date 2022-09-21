@@ -1,11 +1,13 @@
 {-# LANGUAGE CPP #-}
 module Common where
 
+import Prelude hiding (Foldable(..))
+
 import qualified Control.Exception as Exception
 import qualified Compat.TempFile as Compat
 import Control.Monad            ( when )
 import Data.Char                ( isSpace )
-import Data.List                ( foldl' )
+import Data.Foldable            ( Foldable(..) )
 import System.IO
 #if defined(mingw32_HOST_OS)
 import Control.Concurrent       ( threadDelay )
